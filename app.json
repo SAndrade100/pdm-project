@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "50c52c07-b138-4c2b-aefa-0c57e9b33419"
+      }
+    },
+    "owner": "andradedearaujo100"
   }
 }
