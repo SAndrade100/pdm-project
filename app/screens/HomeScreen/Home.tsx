@@ -1,4 +1,4 @@
-//import { Text, View } from "react-native";
+import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
 const products = [
@@ -8,41 +8,41 @@ const products = [
   { id: '4', name: 'Carme de coelho', description: 'Carme de coelho de brandido', price: 'R$ 30,00' },
 ];
 
-export default function Index() {
+const HomeScreen = ({  }) => {
   return (
     <View style={styles.container}>
-          <Text style={styles.title}>Storage.io</Text>
-          <Text style={styles.subtitle}>Pesquisa produtos por nome ou categoria</Text>
-    
-          <FlatList
-            data={products}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <View style={styles.productItem}>
-                <Text style={styles.productName}>{item.name}</Text>
-                <Text style={styles.productDescription}>{item.description}</Text>
-                <Text style={styles.productPrice}>{item.price}</Text>
-              </View>
-            )}
-          />
-    
-          <View style={styles.navigation}>
-            <TouchableOpacity style={styles.navButton}>
-              <Text>Home</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.navButton}>
-              <Text>Ventas</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.navButton}>
-              <Text>Clientes</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.navButton}>
-              <Text>Sair</Text>
-            </TouchableOpacity>
+      <Text style={styles.title}>Storage.io</Text>
+      <Text style={styles.subtitle}>Pesquisa produtos por nome ou categoria</Text>
+
+      <FlatList
+        data={products}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.productItem}>
+            <Text style={styles.productName}>{item.name}</Text>
+            <Text style={styles.productDescription}>{item.description}</Text>
+            <Text style={styles.productPrice}>{item.price}</Text>
           </View>
-        </View>
+        )}
+      />
+
+      <View style={styles.navigation}>
+        <TouchableOpacity style={styles.navButton}>
+          <Text>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton}>
+          <Text>Ventas</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton}>
+          <Text>Clientes</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navButton}>
+          <Text>Sair</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -86,3 +86,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
+export default HomeScreen;
